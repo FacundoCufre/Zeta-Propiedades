@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Updock&display=swap');
+
+$bordo : rgb(97, 30, 30); 
+$dorado : #a27116;
+$blanco30 : rgb(225, 225, 225); 
+$blanco60 : rgb(215, 215, 215);
+$font1 : 'Arvo', serif;
+$font2 : 'Cormorant Garamond', serif;
+$font3 : 'Updock', cursive;
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+*:hover{
+    cursor: default;
+}
+
+body{
+    background-color: $blanco60;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    background-image: linear-gradient(to bottom, $bordo 70%, $blanco60 30%);
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+    padding-bottom: 30px;
+    z-index: 1;
+    .logo{
+        height: 100%;
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        .logo--ar{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $dorado;
+            font-family: $font1;
+            font-size: 25px;
+            font-weight: 600;
+            margin-right: 20px;
+        }
+        .logo--ab{
+            height: 100%;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $dorado;
+            font-family: $font3;
+        }
+    }
+}
+
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .premenu--inicio{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        .premenu{
+            height: 100px;
+            width: 90%;
+            background-color: $blanco30;
+            border-radius: 50px;
+            display: flex;
+            flex-direction: row;
+            #todos{
+                height: 100%;
+                width: 50%;
+                border-right: 1px solid $dorado;
+                display: flex;
+                justify-content: center;
+                justify-content: center;
+                align-items: center;
+                color: $dorado;
+                font-family: $font3;
+                font-size: 30px;
+                transition: all .5s;
+                &:hover{
+                    width: 80%;
+                    font-size: 40px;
+                }
+            }
+            #favs{
+                height: 100%;
+                width: 50%;
+                border-left: 1px solid $dorado;
+                display: flex;
+                justify-content: center;
+                justify-content: center;
+                align-items: center;
+                color: $dorado;
+                font-family: $font3;
+                font-size: 30px;
+                transition: all .5s;
+                &:hover{
+                    width: 80%;
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+    .filtros{
+        width: 80%;
+        background-color: $blanco30;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: $dorado 2px solid;
+        transition: transform .3s;
+        transform: translateY(-200%);
+        margin-bottom: 20px;
+        z-index: 0;
+        h2{
+            height: 30px;
+            font-size: 25px;
+            color: $dorado;
+            text-align: center;
+            font-family: $font1;
+        }
+        .botones{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: space-around;    
+            height: 80%;
+            width: 100%;
+            section{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                justify-items: center;
+                margin-top: 3px;
+                margin-bottom: 3px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+                h2{
+                    font-size: 20px;
+                    font-family: $font1;
+                    color: $dorado;
+                    text-align: center;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                }
+                div{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 2px;
+                    margin-bottom: 2px;
+                    text-decoration: none;
+                    padding: 2px;
+                    span{
+                        font-family: $font2;
+                        font-weight: 600;
+                    }
+                }
+                #boton--filtro:hover{
+                    cursor: default;
+                    background-color: $blanco60;
+                }
+                #ingresar--precio{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    #precio{
+                        height: 30px;
+                        border: $bordo 1px solid;
+                        border-top-left-radius: 15px;
+                        border-bottom-left-radius: 15px;
+                        text-align: center;
+                        width: 220px;
+                    }
+                    #precio:hover{
+                        background-color: $blanco60;
+                        cursor: text;
+                    }
+                    #boton--precio{
+                        height: 30px;
+                        border: $bordo 1px solid;
+                        border-top-right-radius: 15px;
+                        border-bottom-right-radius: 15px;
+                        text-align: center;
+                        width: 75px;
+                    }
+                    #boton--precio:hover{
+                        background-color: $bordo;
+                        color: $blanco30;
+                    }
+                }
+            }
+        }
+    }
+    .show{
+        transform: translateY(0%);
+    }
+    .casas{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .info{
+            position: absolute;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform .3s;
+            transform: translatex(0%);
+            top: 140px;
+            .titulo{
+                height: 70px;
+                padding: 40px;
+                color: $dorado;
+                background-color: $bordo;
+                font-family: $font3;
+                font-size: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+        .todas--props{
+            position: absolute;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform .3s;
+            transform: translatex(-100%);
+            top: 370px;
+            .titulo{
+                height: 70px;
+                padding: 40px;
+                color: $dorado;
+                background-color: $bordo;
+                font-family: $font3;
+                font-size: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+
+            }
+            #conteiner{
+                display: grid;
+                width: 100%;
+                padding: 20px;
+                padding-top: 0;
+                grid-template-columns: 33% 33% 33%;
+                grid-auto-rows: 400px;
+                .propiedad{
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .propiedad__div{
+                        height: 80%;
+                        width: 90%;
+                        background-color: $blanco30;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                        .boton--fav{
+                            z-index: 1;
+                            position: absolute;
+                            height: 30px;
+                            width: 60px;
+                            background-color: $dorado;
+                            top: 15px;
+                            right: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: $blanco30;
+                            clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 0% 100%);
+                            transition: all .2s;
+                            &:hover{
+                                background-color: #dbb878;
+                                color: $dorado;
+                                width: 70px;
+                            }
+                        }
+                        .imagen{
+                            height: 223px;
+                            width: 100%;
+                        }
+                        .texto{
+                            color: $dorado;
+                            height: 100px;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            background-color: $bordo;
+                            text-align: center;
+                            .nombre{
+                                height: 100%;
+                                width: 60%;
+                                font-family: $font1;
+                                text-align: center;
+                                color: $dorado;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                            .transaccion{
+                                height: 100%;
+                                width: 40%;
+                                display: flex;
+                                flex-direction: column;
+                                .tipo{
+                                    height: 50%;
+                                    width: 100%;
+                                    font-family: $font2;
+                                    color: $dorado;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                .precio{
+                                    height: 50%;
+                                    width: 100%;
+                                    font-family: $font2;
+                                    color: $dorado;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                            }
+                        }
+                    }   
+                }
+            }
+        }
+        
+        .mis--favs{
+            position: absolute;
+            top: 120px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform .3s;
+            transform: translatex(-100%);
+            margin-top: 20px;
+            .titulo{
+                height: 70px;
+                padding: 40px;
+                color: $dorado;
+                background-color: $bordo;
+                font-family: $font3;
+                font-size: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+            }
+            #conteiner2{
+                display: grid;
+                width: 100%;
+                padding: 20px;
+                padding-top: 0;
+                grid-template-columns: 33% 33% 33%;
+                grid-auto-rows: 400px;
+                .propiedad{
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .propiedad__div{
+                        height: 80%;
+                        width: 90%;
+                        background-color: $blanco30;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                        .boton--elim{
+                            z-index: 1;
+                            position: absolute;
+                            height: 40px;
+                            width: 40px;
+                            background-color: $bordo;
+                            top: 15px;
+                            right: 15px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: $blanco30;
+                            transition: all .2s;
+                            border-radius: 20px;
+                            &:hover{
+                                height: 46px;
+                                width: 46px;
+                                border-radius: 23px;
+                                top: 10px;
+                                right: 10px;
+                                background-color: $blanco60;
+                                color: $bordo;
+                            }
+                        }
+                        .imagen{
+                            height: 224px;
+                            width: 100%;
+                        }
+                        .texto{
+                            color: $dorado;
+                            height: 100px;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            background-color: $bordo;
+                            text-align: center;
+                            .nombre{
+                                height: 100%;
+                                width: 60%;
+                                font-family: $font1;
+                                text-align: center;
+                                color: $dorado;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                            .transaccion{
+                                height: 100%;
+                                width: 40%;
+                                display: flex;
+                                flex-direction: column;
+                                .tipo{
+                                    height: 50%;
+                                    width: 100%;
+                                    font-family: $font2;
+                                    color: $dorado;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                .precio{
+                                    height: 50%;
+                                    width: 100%;
+                                    font-family: $font2;
+                                    color: $dorado;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                            }
+                        }
+                    }   
+                }
+            }
+        }
+        .show2{
+            transform: translatex(0%);
+        }
+    }
+}

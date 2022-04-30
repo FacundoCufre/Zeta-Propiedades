@@ -1,0 +1,5 @@
+mostrarPropiedades()
+actualizarFavs()
+mostrarFiltros()
+mostrarPremenu()
+
