@@ -12,13 +12,13 @@
 }
 
 body {
-  background-color: #d7d7d7;
+  background-color: rgb(215, 215, 215);
   display: flex;
   flex-direction: column;
 }
 
 header {
-  background-image: linear-gradient(to bottom, #611e1e 70%, #d7d7d7 30%);
+  background-image: linear-gradient(to bottom, rgb(97, 30, 30) 70%, rgb(215, 215, 215) 30%);
   width: 100%;
   height: 100px;
   display: flex;
@@ -75,15 +75,14 @@ main .premenu--inicio {
 main .premenu--inicio .premenu {
   height: 100px;
   width: 90%;
-  background-color: #e1e1e1;
+  background-color: rgb(225, 225, 225);
   border-radius: 50px;
   display: flex;
   flex-direction: row;
 }
 main .premenu--inicio .premenu #todos {
   height: 100%;
-  width: 50%;
-  border-right: 1px solid #a27116;
+  width: 25%;
   display: flex;
   justify-content: center;
   justify-content: center;
@@ -94,13 +93,12 @@ main .premenu--inicio .premenu #todos {
   transition: all 0.5s;
 }
 main .premenu--inicio .premenu #todos:hover {
-  width: 80%;
+  width: 50%;
   font-size: 40px;
 }
 main .premenu--inicio .premenu #favs {
   height: 100%;
-  width: 50%;
-  border-left: 1px solid #a27116;
+  width: 25%;
   display: flex;
   justify-content: center;
   justify-content: center;
@@ -111,12 +109,44 @@ main .premenu--inicio .premenu #favs {
   transition: all 0.5s;
 }
 main .premenu--inicio .premenu #favs:hover {
-  width: 80%;
+  width: 50%;
+  font-size: 40px;
+}
+main .premenu--inicio .premenu #inicio {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  align-items: center;
+  color: #a27116;
+  font-family: "Updock", cursive;
+  font-size: 30px;
+  transition: all 0.5s;
+}
+main .premenu--inicio .premenu #inicio:hover {
+  width: 50%;
+  font-size: 40px;
+}
+main .premenu--inicio .premenu #compar {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  align-items: center;
+  color: #a27116;
+  font-family: "Updock", cursive;
+  font-size: 30px;
+  transition: all 0.5s;
+}
+main .premenu--inicio .premenu #compar:hover {
+  width: 50%;
   font-size: 40px;
 }
 main .filtros {
   width: 80%;
-  background-color: #e1e1e1;
+  background-color: rgb(225, 225, 225);
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   padding: 20px;
@@ -178,7 +208,7 @@ main .filtros .botones section div span {
 }
 main .filtros .botones section #boton--filtro:hover {
   cursor: default;
-  background-color: #d7d7d7;
+  background-color: rgb(215, 215, 215);
 }
 main .filtros .botones section #ingresar--precio {
   display: flex;
@@ -188,27 +218,27 @@ main .filtros .botones section #ingresar--precio {
 }
 main .filtros .botones section #ingresar--precio #precio {
   height: 30px;
-  border: #611e1e 1px solid;
+  border: rgb(97, 30, 30) 1px solid;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   text-align: center;
   width: 220px;
 }
 main .filtros .botones section #ingresar--precio #precio:hover {
-  background-color: #d7d7d7;
+  background-color: rgb(215, 215, 215);
   cursor: text;
 }
 main .filtros .botones section #ingresar--precio #boton--precio {
   height: 30px;
-  border: #611e1e 1px solid;
+  border: rgb(97, 30, 30) 1px solid;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   text-align: center;
   width: 75px;
 }
 main .filtros .botones section #ingresar--precio #boton--precio:hover {
-  background-color: #611e1e;
-  color: #e1e1e1;
+  background-color: rgb(97, 30, 30);
+  color: rgb(225, 225, 225);
 }
 main .show {
   transform: translateY(0%);
@@ -226,15 +256,15 @@ main .casas .info {
   width: 100%;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s;
-  transform: translatex(0%);
+  transition: transform 0.6s;
+  transform: translatex(-100%);
   top: 140px;
 }
 main .casas .info .titulo {
   height: 70px;
   padding: 40px;
   color: #a27116;
-  background-color: #611e1e;
+  background-color: rgb(97, 30, 30);
   font-family: "Updock", cursive;
   font-size: 40px;
   display: flex;
@@ -243,12 +273,174 @@ main .casas .info .titulo {
   flex-direction: column;
   width: 100%;
 }
+main .casas .info #conteinerInfo {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+  position: relative;
+}
+main .casas .info #conteinerInfo .info__p {
+  height: 300px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: absolute;
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+  background-color: rgb(97, 30, 30);
+  color: #a27116;
+  top: 40px;
+  left: 0;
+  padding: 50px;
+  padding-top: 70px;
+  font-family: "Arvo", serif;
+}
+main .casas .info #conteinerInfo .info__p p {
+  display: flex;
+  height: 50%;
+  width: 100%;
+  margin-top: 20px;
+}
+main .casas .info #conteinerInfo .info__logo {
+  height: 300px;
+  width: 30%;
+  display: flex;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+  background-color: rgb(97, 30, 30);
+  color: #a27116;
+  right: 0px;
+  top: 40px;
+}
+main .casas .info #conteinerInfo .info__logo .logo--ar {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #a27116;
+  font-family: "Arvo", serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+main .casas .info #conteinerInfo .info__logo .logo--ab {
+  height: 100%;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #a27116;
+  font-family: "Updock", cursive;
+  margin-bottom: 10px;
+}
+main .casas .comparar {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.6s;
+  transform: translatex(-100%);
+  top: 140px;
+}
+main .casas .comparar .titulo {
+  height: 70px;
+  padding: 40px;
+  color: #a27116;
+  background-color: rgb(97, 30, 30);
+  font-family: "Updock", cursive;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+main .casas .comparar #conteinerCompar {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+}
+main .casas .comparar #conteinerCompar .propiedadComparada__div {
+  height: 100%;
+  width: 50%;
+  display: grid;
+  grid-template-rows: 223px 70px 40px 40px 40px 40px 40px 40px 40px;
+  grid-gap: 30px;
+}
+main .casas .comparar #conteinerCompar .propiedadComparada__div .imagen {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+}
+main .casas .comparar #conteinerCompar .propiedadComparada__div .imagen .boton--elim2 {
+  z-index: 1;
+  position: absolute;
+  height: 46px;
+  width: 46px;
+  background-color: rgb(97, 30, 30);
+  top: 15px;
+  left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(225, 225, 225);
+  transition: all 0.2s;
+  border-radius: 23px;
+}
+main .casas .comparar #conteinerCompar .propiedadComparada__div .imagen .boton--elim2:hover {
+  height: 46px;
+  width: 46px;
+  border-radius: 23px;
+  top: 10px;
+  right: 10px;
+  background-color: rgb(215, 215, 215);
+  color: rgb(97, 30, 30);
+}
+main .casas .comparar #conteinerCompar .propiedadComparada__div .imagen .boton--fav {
+  z-index: 1;
+  position: absolute;
+  height: 35px;
+  width: 60px;
+  background-color: #a27116;
+  top: 15px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(225, 225, 225);
+  clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 0% 100%);
+  transition: all 0.2s;
+}
+main .casas .comparar #conteinerCompar .propiedadComparada__div .imagen .boton--fav:hover {
+  background-color: #dbb878;
+  color: #a27116;
+  width: 70px;
+}
+main .casas .comparar #conteinerCompar .propiedadComparada__div div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-family: "Arvo", serif;
+  font-size: 30px;
+}
 main .casas .todas--props {
   position: absolute;
   width: 100%;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s;
+  transition: transform 0.6s;
   transform: translatex(-100%);
   top: 370px;
 }
@@ -256,7 +448,7 @@ main .casas .todas--props .titulo {
   height: 70px;
   padding: 40px;
   color: #a27116;
-  background-color: #611e1e;
+  background-color: rgb(97, 30, 30);
   font-family: "Updock", cursive;
   font-size: 40px;
   display: flex;
@@ -270,7 +462,7 @@ main .casas .todas--props #conteiner {
   width: 100%;
   padding: 20px;
   padding-top: 0;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 25% 25% 25% 25%;
   grid-auto-rows: 400px;
 }
 main .casas .todas--props #conteiner .propiedad {
@@ -283,7 +475,7 @@ main .casas .todas--props #conteiner .propiedad {
 main .casas .todas--props #conteiner .propiedad .propiedad__div {
   height: 80%;
   width: 90%;
-  background-color: #e1e1e1;
+  background-color: rgb(225, 225, 225);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -301,7 +493,7 @@ main .casas .todas--props #conteiner .propiedad .propiedad__div .boton--fav {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #e1e1e1;
+  color: rgb(225, 225, 225);
   clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 0% 100%);
   transition: all 0.2s;
 }
@@ -310,8 +502,28 @@ main .casas .todas--props #conteiner .propiedad .propiedad__div .boton--fav:hove
   color: #a27116;
   width: 70px;
 }
+main .casas .todas--props #conteiner .propiedad .propiedad__div .boton--comp {
+  z-index: 1;
+  position: absolute;
+  height: 30px;
+  width: 60px;
+  background-color: rgb(53, 53, 175);
+  top: 50px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(225, 225, 225);
+  clip-path: polygon(12px 0%, 100% 0%, 100% 100%, 0% 100%);
+  transition: all 0.2s;
+}
+main .casas .todas--props #conteiner .propiedad .propiedad__div .boton--comp:hover {
+  background-color: #364bc2;
+  color: black;
+  width: 70px;
+}
 main .casas .todas--props #conteiner .propiedad .propiedad__div .imagen {
-  height: 223px;
+  height: 222px;
   width: 100%;
 }
 main .casas .todas--props #conteiner .propiedad .propiedad__div .texto {
@@ -320,7 +532,7 @@ main .casas .todas--props #conteiner .propiedad .propiedad__div .texto {
   width: 100%;
   display: flex;
   flex-direction: row;
-  background-color: #611e1e;
+  background-color: rgb(97, 30, 30);
   text-align: center;
 }
 main .casas .todas--props #conteiner .propiedad .propiedad__div .texto .nombre {
@@ -363,7 +575,7 @@ main .casas .mis--favs {
   width: 100%;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s;
+  transition: transform 0.6s;
   transform: translatex(-100%);
   margin-top: 20px;
 }
@@ -371,7 +583,7 @@ main .casas .mis--favs .titulo {
   height: 70px;
   padding: 40px;
   color: #a27116;
-  background-color: #611e1e;
+  background-color: rgb(97, 30, 30);
   font-family: "Updock", cursive;
   font-size: 40px;
   display: flex;
@@ -398,7 +610,7 @@ main .casas .mis--favs #conteiner2 .propiedad {
 main .casas .mis--favs #conteiner2 .propiedad .propiedad__div {
   height: 80%;
   width: 90%;
-  background-color: #e1e1e1;
+  background-color: rgb(225, 225, 225);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -410,13 +622,13 @@ main .casas .mis--favs #conteiner2 .propiedad .propiedad__div .boton--elim {
   position: absolute;
   height: 40px;
   width: 40px;
-  background-color: #611e1e;
+  background-color: rgb(97, 30, 30);
   top: 15px;
   right: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #e1e1e1;
+  color: rgb(225, 225, 225);
   transition: all 0.2s;
   border-radius: 20px;
 }
@@ -426,8 +638,8 @@ main .casas .mis--favs #conteiner2 .propiedad .propiedad__div .boton--elim:hover
   border-radius: 23px;
   top: 10px;
   right: 10px;
-  background-color: #d7d7d7;
-  color: #611e1e;
+  background-color: rgb(215, 215, 215);
+  color: rgb(97, 30, 30);
 }
 main .casas .mis--favs #conteiner2 .propiedad .propiedad__div .imagen {
   height: 224px;
@@ -439,7 +651,7 @@ main .casas .mis--favs #conteiner2 .propiedad .propiedad__div .texto {
   width: 100%;
   display: flex;
   flex-direction: row;
-  background-color: #611e1e;
+  background-color: rgb(97, 30, 30);
   text-align: center;
 }
 main .casas .mis--favs #conteiner2 .propiedad .propiedad__div .texto .nombre {
