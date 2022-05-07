@@ -141,13 +141,13 @@ function mostrarPremenu(){
 /* BOTONES DEL MENU                --------------------------------------  */
 
 function mostrarFiltros(){
-    mostrarMenu2()
-    mostrarMenu3()
+    mostrarMenuTransacciones()
+    mostrarMenuPrecio()
 }
 
         /* MENU TIPOS DE PROPIEDADES */
 
-function mostrarMenu(x){
+function mostrarMenuCategorias(x){
     x.forEach((categoria)=>{
         const {id, nombre} = categoria
         const filtro = document.getElementById("propiedades")
@@ -157,7 +157,7 @@ function mostrarMenu(x){
         
         myBtn.innerHTML=`<span>${nombre}</span>`
         myBtn.addEventListener("click", ()=>{
-            mostrarPropiedadesFiltradas(id)
+            mostrarPropiedadesFiltradasTipo(id)
         })
 
         filtro.appendChild(myBtn);})
@@ -166,7 +166,7 @@ function mostrarMenu(x){
 
         /* MENU TIPOS DE TRANSACCION */
 
-function mostrarMenu2(){
+function mostrarMenuTransacciones(){
     transacciones.forEach((transaccion)=>{
         const {id, nombre} = transaccion
         const filtro = document.getElementById("transacciones")
@@ -175,7 +175,7 @@ function mostrarMenu2(){
             myBtn.setAttribute("id", `boton--filtro`)
     
             myBtn.innerHTML=`<span>${nombre}</span>`
-            myBtn.addEventListener("click", ()=>{mostrarPropiedadesFiltradas2(id)})
+            myBtn.addEventListener("click", ()=>{mostrarPropiedadesFiltradasTransaccion(id)})
         
         filtro.appendChild(myBtn);})
 }
@@ -183,7 +183,7 @@ function mostrarMenu2(){
 
         /* MENU PRECIOS */
 
-function mostrarMenu3(){
+function mostrarMenuPrecio(){
         
         const filtro = document.getElementById("ingresar--precio")
 
@@ -193,8 +193,14 @@ function mostrarMenu3(){
             myBtn.setAttribute("id", `boton--precio`)
             myBtn.innerHTML=`<span>FILTRAR</span>`
             myBtn.addEventListener("click", ()=>{
-                !isNaN(precio.value) ? mostrarPropiedadesFiltradas3(precio.value) : noValido()
-                precio.value < 6000 && noValido()
+                new Promise ((resolve, reject)=>{
+                    if(precio.value >= 6000){
+                        resolve(mostrarPropiedadesFiltradasPrecio(precio.value))
+                    }
+                    else{
+                        reject(noValido())
+                    } 
+                })
             })
 
         filtro.appendChild(myBtn);
@@ -229,7 +235,7 @@ function mostrarPropiedades (){
 
 /* MOSTRAR LAS PROPIEDADES FILTRADAS POR TIPO               --------------------------------------  */
 
-function mostrarPropiedadesFiltradas(x){
+function mostrarPropiedadesFiltradasTipo(x){
     const propiedadesFiltradas = filtrarPropiedades(x)
     conteiner.innerHTML = ``
     propiedadesFiltradas.forEach(element => {
@@ -252,7 +258,7 @@ function filtrarPropiedades(x){
 
 /* MOSTRAR LAS PROPIEDADES FILTRADAS POR TRANSACCION               --------------------------------------  */
 
-function mostrarPropiedadesFiltradas2(x){
+function mostrarPropiedadesFiltradasTransaccion(x){
     const propiedadesFiltradas = filtrarPropiedades2(x)
     conteiner.innerHTML = ``
     propiedadesFiltradas.forEach(element => {
@@ -273,7 +279,7 @@ function filtrarPropiedades2(x){
 
 /* MOSTRAR LAS PROPIEDADES FILTRADAS POR PRECIO               --------------------------------------  */
 
-function mostrarPropiedadesFiltradas3(x){
+function mostrarPropiedadesFiltradasPrecio(x){
     const propiedadesFiltradas = propiedadesFiltradas3(x)
     conteiner.innerHTML = ``
     propiedadesFiltradas.forEach(element => {
@@ -436,6 +442,8 @@ function compara(){
     baños1 >= baños2 ? bañoid1.setAttribute("style", "background-color: green;") : bañoid1.setAttribute("style", "background-color: red;")
     baños2 >= baños1 ? bañoid2.setAttribute("style", "background-color: green;") : bañoid2.setAttribute("style", "background-color: red;")
 }
+
+/* ELIMINAR COMPARACION                                   --------------------------------------  */
 
 function eliminarComp(x){
     let props = propiedades.map(el=>el.id)

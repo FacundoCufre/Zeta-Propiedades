@@ -2,7 +2,7 @@ const urlCategorias = `js/categorias.json`
 
 fetch(urlCategorias)
 .then((response)=>response.json())
-.then((datos)=>mostrarMenu(datos))
+.then((datos)=>mostrarMenuCategorias(datos))
 
 const transacciones = [
     {id: 1, nombre: "ALQUILER"},
